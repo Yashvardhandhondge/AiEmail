@@ -10,10 +10,11 @@ export const getAurinkoAuthUrl = async (serviceType : 'Google' | 'Office365') =>
     serviceType ,
     scope : 'Mail.Read Mail.ReadWrite Mail.Send Mail.Drafts Mail.All',
     responseType : 'code',
-    redirectUri : `${process.env.NEXT_PUBLIC_URL}/api/aurinko/callback`
+    redirectUri : `${process.env.NEXT_PUBLIC_URL}/api/aurinko/callback`,
+    returnUri : `${process.env.NEXT_PUBLIC_URL}`,
    })
 
 
-   
+
    return `https://api.aurinko.io/v1/auth/authorize?${params.toString()}`
 }
