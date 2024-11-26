@@ -10,7 +10,7 @@ export const getAurinkoAuthUrl = async (serviceType : 'Google' | 'Office365') =>
     serviceType ,
     scope : 'Mail.Read Mail.ReadWrite Mail.Send Mail.Drafts Mail.All',
     responseType : 'code',
-    redirectUri : `http://localhost:3000/api/aurinko/callback`
+    redirectUri : `https://ai-email-gules.vercel.app/api/aurinko/callback`
    })
 
    return `https://api.aurinko.io/v1/auth/authorize?${params.toString()}`
